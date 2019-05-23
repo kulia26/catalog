@@ -1,0 +1,12 @@
+{
+  "name": "catalog",
+  "version": "1.0.0",
+  "description": "Test project of an online product catalog for a web programming course at KPI",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "kulia26",
+  "license": "ISC"
+}
