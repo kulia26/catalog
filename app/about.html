@@ -8,137 +8,137 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-        
-        <script src="/scripts/menu.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <script src="/scripts/menu.js"></script>
 
 </head>
 
 <body>
-        <header class="flex">
+    <header class="flex">
 
-                <a class="mb-only mobile-menu mobile-menu-bars"  href="#">
-                    <i class="fas fa-bars"></i>
-                </a>
-                <a class="mb-only mobile-menu mobile-menu-times"  href="#">
-                    <i class="fas fa-times"></i>
-                </a>
-        
-                
-                <div class="col1 center mb-hidden">Вхід</div>
-                <div class="col1 center mb-hidden">Реєстрація</div>
-                <div class="col3 center">
-                    <a href="/index.html">
-                        <h1 class="name">Catalog</h1>
-                    </a>
+        <a class="mb-only mobile-menu mobile-menu-bars" href="#">
+            <i class="fas fa-bars"></i>
+        </a>
+        <a class="mb-only mobile-menu mobile-menu-times" href="#">
+            <i class="fas fa-times"></i>
+        </a>
+
+
+        <div class="col1 center mb-hidden">Вхід</div>
+        <div class="col1 center mb-hidden">Реєстрація</div>
+        <div class="col3 center">
+            <a href="/index.html">
+                <h1 class="name">Catalog</h1>
+            </a>
+        </div>
+        <div class="col1 center mb-hidden"><i class="fas fa-mobile-alt"></i>8 800 555 35 35</div>
+        <div class="col1 center mb-hidden">
+            <form action="/action_page.php" id="form1">
+                <input type="text" name="fname">
+                <button><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+
+    </header>
+
+
+
+    <nav class="flex mb-hidden">
+        <div class="col1"></div>
+        <div class="col1 center">
+            <a href="/index.html">
+                <h2>Головна</h2>
+            </a>
+        </div>
+        <div class="col1 center">
+            <a href="/about.html">
+                <h2>Про сайт</h2>
+            </a>
+        </div>
+        <div class="col1 center">
+            <a href="/contacts.html">
+                <h2>Контакти</h2>
+            </a>
+        </div>
+        <div class="col1"></div>
+    </nav>
+
+    <div class="flex  content">
+        <sidebar class="col1 ">
+            <div>
+                <h1 class="center">Каталог</h1>
+                <div class="arrow mb-only">
+                    <i class="fas fa-arrow-down"></i>
                 </div>
-                <div class="col1 center mb-hidden"><i class="fas fa-mobile-alt"></i>8 800 555 35 35</div>
-                <div class="col1 center mb-hidden">
-                    <form action="/action_page.php" id="form1">
-                        <input type="text" name="fname">
-                        <button><i class="fas fa-search"></i></button>
-                    </form>
-                </div>
-                
-            </header>
-            
-        
-        
-            <nav class="flex mb-hidden">
-                <div class="col1"></div>
-                <div class="col1 center">
-                    <a href="/index.html">
-                        <h2>Головна</h2>
-                    </a>
-                </div>
-                <div class="col1 center">
-                    <a href="/about.html">
-                        <h2>Про сайт</h2>
-                    </a>
-                </div>
-                <div class="col1 center">
-                    <a href="/contacts.html">
-                        <h2>Контакти</h2>
-                    </a>
-                </div>
-                <div class="col1"></div>
-            </nav>
-        
-            <div class="flex  content">
-                <sidebar class="col1 ">
-                    <div>
-                        <h1 class="center">Каталог</h1>
-                        <div class="arrow mb-only">
-                            <i class="fas fa-arrow-down"></i>
-                        </div>
-        
-                    </div>
-        
-                    <div class="catalog-list">
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <h3>
-                                        <i class="fas fa-laptop"></i>
-                                        Ноутбуки
-                                    </h3>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <h3>
-                                        <i class="fas fa-tablet"></i>
-                                        Планшети
-                                    </h3>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <h3>
-                                        <i class="fas fa-phone"></i>
-                                        Смартфони
-                                    </h3>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <h3>
-                                        <i class="far fa-keyboard"></i>
-                                        Клавіатури
-                                    </h3>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <h3>
-                                        <i class="fas fa-mouse-pointer"></i>
-                                        Мишки
-                                    </h3>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <h3>
-                                        <i class="fas fa-headphones-alt"></i>
-                                        Навушники
-                                    </h3>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <h3>
-                                        <i class="far fa-file-audio"></i>
-                                        Плеєри
-                                    </h3>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-        
-                    <div class="arrow-up">
-                            <i class="fas fa-arrow-up"></i>
-                    </div>
-                </sidebar>
+
+            </div>
+
+            <div class="catalog-list">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <h3>
+                                <i class="fas fa-laptop"></i>
+                                Ноутбуки
+                            </h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <h3>
+                                <i class="fas fa-tablet"></i>
+                                Планшети
+                            </h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <h3>
+                                <i class="fas fa-phone"></i>
+                                Смартфони
+                            </h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <h3>
+                                <i class="far fa-keyboard"></i>
+                                Клавіатури
+                            </h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <h3>
+                                <i class="fas fa-mouse-pointer"></i>
+                                Мишки
+                            </h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <h3>
+                                <i class="fas fa-headphones-alt"></i>
+                                Навушники
+                            </h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <h3>
+                                <i class="far fa-file-audio"></i>
+                                Плеєри
+                            </h3>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="arrow-up">
+                <i class="fas fa-arrow-up"></i>
+            </div>
+        </sidebar>
         <div class="col5 main">
             <div class="flex">
                 <h1>
@@ -148,7 +148,14 @@
             <section class="flex col5">
                 <div>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis temporibus ut sunt sit autem sapiente illum, ducimus, ab harum nesciunt magni rem mollitia modi non. Ipsam reiciendis ipsum voluptatum dicta, doloremque fugiat, temporibus suscipit eveniet quas dolor amet est corrupti ab enim provident, aliquam sint consectetur facere delectus debitis maxime? Sapiente corrupti iure, possimus tempore maiores expedita blanditiis enim! Provident alias ad illo quasi quaerat odio dicta, rem officia doloremque aliquid. Reprehenderit modi fugiat rerum repudiandae tenetur autem eos, culpa, aliquid corporis molestiae ipsa impedit eligendi rem nemo possimus placeat. Saepe rem explicabo rerum quaerat consequuntur quia cumque facilis dolore?
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis temporibus ut sunt sit autem
+                        sapiente illum, ducimus, ab harum nesciunt magni rem mollitia modi non. Ipsam reiciendis ipsum
+                        voluptatum dicta, doloremque fugiat, temporibus suscipit eveniet quas dolor amet est corrupti ab
+                        enim provident, aliquam sint consectetur facere delectus debitis maxime? Sapiente corrupti iure,
+                        possimus tempore maiores expedita blanditiis enim! Provident alias ad illo quasi quaerat odio
+                        dicta, rem officia doloremque aliquid. Reprehenderit modi fugiat rerum repudiandae tenetur autem
+                        eos, culpa, aliquid corporis molestiae ipsa impedit eligendi rem nemo possimus placeat. Saepe
+                        rem explicabo rerum quaerat consequuntur quia cumque facilis dolore?
                     </p>
                 </div>
             </section>
