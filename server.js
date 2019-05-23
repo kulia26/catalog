@@ -8,7 +8,7 @@ const port = 8080;
 const server = http.createServer((req, res) => {
   let filePath = path.join(__dirname, path.sep,'app');
   filePath += req.url !== '/' ? req.url : "/index.html";
-  // req.url - is not good, use path.join instead
+
 
   fs.exists(filePath, (exists) => {
 
