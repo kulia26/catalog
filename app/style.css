@@ -461,3 +461,12 @@ section {
 .advice-single .text {
     color: #2a2a2a;
 }
+
+.form-contact > form > *{
+    padding: 3px 0;
+}
+
+.form-contact > form > input#submit{
+    padding: 4px 0;
+    margin-top: 10px;
+}

@@ -140,25 +140,34 @@
             </div>
         </sidebar>
         <div class="col5 main">
+            <h1 class="flex">Ваш відгук важливий для нас:</h1>
+
 
             <section class="flex">
-                <div class="col1 flex advice advice-single">
+                <div class="col1 flex form form-contact">
 
-                    <div class="image col2">
-                        <img src="/img/garold.jpg" alt="buyer">
-                    </div>
-                    <div class="text col5">
-                        <h2>Автор: Гарольд</h2>
+                    <form action="contacts.html" method="post" class="flex column">
+                        <label for="name">Ім'я:</label>
+                        <input id="name" type="text" name="name">
 
-                        <p>
-                            - перегрев<br>
-                            - клавиши залипают<br>
-                            - потрескивает корпус, как было у моделей 2016 года<br>
-                            - старшая модель равна младшей по производиельности, из перегрева
-                            процессора<br>
-                            - производительность не соответствует ожиданиям, и цене<br>
-                        </p>
-                    </div>
+                        <label for="organization">Організація:</label>
+                        <input id="organization" type="text" name="organization">
+
+                        <label for="reason">Причина:</label>
+                        <select name="select" id="reason">
+                            <option value="press">преса</option>
+                            <option value="partnership">партнерство</option>
+                            <option value="other" selected>інше</option>
+                        </select>
+
+                        <label for="text">Текст звернення:</label>
+                        <input id="text" type="text" name="text">
+
+                        <label for="file">Зображення:</label>
+                        <input id="file" type="file" name="file" accept="image/*" value="Обрати файл">
+
+                        <input type="submit" value="Відправити" id="submit">
+                    </form>
 
                 </div>
             </section>
