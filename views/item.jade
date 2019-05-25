@@ -1,0 +1,68 @@
+extends layout
+
+block main
+  .col5.main
+    .flex
+      h1
+        p Ваш товар
+    section.flex
+      .col1.flex.item
+        .image.col2
+          img(src='/images/mac.png', alt='MacBook Pro')
+        .text.col5
+          h3 MacBook Pro mid 2018
+          h3= item
+          i
+            p Экран 13.3" (2560x1600), IPS / глянцевый / Intel Core i7 (2.7 - 4.5 ГГц) / RAM 16 ГБ/ SSD 2 ТБ
+    .flex
+      h1
+        p Купуйте в магазинах
+    section.flex.shops
+      .flex.shop
+        .col1
+          img(height='55px', src='/images/shop.png', alt='shop-logo')
+        .col1
+          h3 Rozetka.ua
+        .col1
+          p
+            mark 127 999 
+            small грн
+      .flex.shop
+        .col1
+          img(height='55px', src='/images/shop.png', alt='shop-logo')
+        .col1
+          h3 Rozetka.ua
+        .col1
+          p
+            mark 127 999 
+            small грн
+      .flex.shop
+        .col1
+          img(height='55px', src='/images/shop.png', alt='shop-logo')
+        .col1
+          h3 Rozetka.ua
+        .col1
+          p
+            mark 127 999 
+            small грн
+    .flex
+      h1
+        p Відгуки покупців
+    section.flex
+      .col1.flex.advice
+        .image.col2
+          img(src='/images/garold.jpg', alt='buyer')
+        .text.col5
+          h2 Автор: Гарольд
+          p
+            | - перегрев
+            br
+            |                             - клавиши залипают
+            br
+            |                             - потрескивает корпус, как было у моделей 2016 года
+            br
+            |                             - старшая модель равна младшей по производиельности, из перегрева
+            |                             процессора
+            br
+            |                             - производительность не соответствует ожиданиям, и цене
+            br

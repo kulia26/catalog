@@ -1,0 +1,24 @@
+extends layout
+
+block main
+  .col5.main
+    .flex
+      h1
+        p Про сайт
+    section.flex
+      .col1.flex.form.form-contact
+        form.flex.column(action='contacts.html', method='post')
+          label(for='name') Ім'я:
+          input#name(type='text', name='name')
+          label(for='organization') Організація:
+          input#organization(type='text', name='organization')
+          label(for='reason') Причина:
+          select#reason(name='select')
+            option(value='press') преса
+            option(value='partnership') партнерство
+            option(value='other', selected='') інше
+          label(for='text') Текст звернення:
+          input#text(type='text', name='text')
+          label(for='file') Зображення:
+          input#file(type='file', name='file', accept='image/*', value='Обрати файл')
+          input#submit(type='submit', value='Відправити')
