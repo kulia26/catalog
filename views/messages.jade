@@ -5,11 +5,11 @@ block messages
       h1
         p Залиште свій відгук
     section.column.center.text-align-left
-      if(errors !== undefined)
+      if(errors)
         for error in errors
           div
             p=error.msg 
-      if(messages !== undefined)
+      if(messages)
         for msg in messages
           div
             p=msg 
