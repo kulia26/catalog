@@ -4,21 +4,21 @@ block main
   .col5.main
     .flex
       h1
-        p Залиште свій відгук
+        p Напишіть нам
     section.flex
       .col1.flex.form.form-contact
-        form.flex.column(action='/contacts', method='post', enctype='multipart/form-data')
+        form.flex.column(action='/contacts', method='post', enctype="multipart/form-data")
           label(for='name') Ім'я:
-          input#name(type='text', name='name', id='name')
+          input#name(type='text', name='name')
           label(for='organization') Організація:
-          input#organization(type='text', name='organization', id='organization')
+          input#organization(type='text', name='organization')
           label(for='reason') Причина:
-          select#reason(name='select', id='select')
+          select#reason(name='select')
             option(value='press') преса
             option(value='partnership') партнерство
             option(value='other', selected='') інше
           label(for='text') Текст звернення:
-          input#text(type='text', name='text', id='text')
+          input#text(type='text', name='text')
           label(for='file') Зображення:
-          input#file(type='file', name='file', accept='image/*', value='Обрати файл', id='file')
+          input#file(type='file', name='file', accept='image/*', value='Обрати файл')
           input#submit(type='submit', value='Відправити')
