@@ -1,0 +1,17 @@
+extends layout
+block messages
+  .col5.main
+    .flex
+      h1
+        p Залиште свій відгук
+    section.column.center.text-align-left
+      if(errors !== undefined)
+        for error in errors
+          div
+            p=error.msg 
+      if(messages !== undefined)
+        for msg in messages
+          div
+            p=msg 
+      p 
+        a(href='javascript:history.back()') ⬅️ Повернутися

@@ -70,8 +70,11 @@ header .fa-mobile-alt{
 .center {
     align-self: center;
     text-align: center;
+    margin: 0 auto;
 }
-
+.text-align-left{
+    text-align: left;
+}
 footer {
 
     height: 4em;
