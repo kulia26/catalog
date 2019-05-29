@@ -1,18 +1,19 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+'use strict';
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
 
 //const { check,validationResult } = require('express-validator/check');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var aboutRouter = require('./routes/about');
-var contactsRouter = require('./routes/contacts');
-var itemRouter = require('./routes/item');
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
+const aboutRouter = require('./routes/about');
+const contactsRouter = require('./routes/contacts');
+const itemRouter = require('./routes/item');
 
-var app = express();
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -33,19 +34,20 @@ app.use('/contacts', contactsRouter);
 app.use('/item', itemRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use((req, res, next) => {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use((err, req, res) => {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
   // render the error page
   res.status(err.status || 500);
-  res.render('messages', {messages : ['Вибачте, сервер не може обробити ваш запит 😔'+'\n'+err.message]});
+  const msgs = ['Cервер не може обробити ваш запит 😔\n' + err.message];
+  res.render('messages', { messages: msgs });
 
 });
 
