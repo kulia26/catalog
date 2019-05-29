@@ -8,7 +8,10 @@ block messages
       if(errors)
         for error in errors
           div
-            p=error.msg 
+            if(error.msg)
+              p=error.msg 
+            if(error.message)
+              p=error.message
       if(messages)
         for msg in messages
           div

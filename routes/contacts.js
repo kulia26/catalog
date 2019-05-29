@@ -3,6 +3,7 @@ var router = express.Router();
 var multer  = require('multer');
 const path = require('path');
 const crypto = require('crypto');
+const fs = require('fs');
 
 function checksum(str, algorithm, encoding) {
   return crypto
@@ -11,16 +12,7 @@ function checksum(str, algorithm, encoding) {
     .digest(encoding || 'hex')
 }
 
-var storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, './uploads/images');
-  },
-  filename: function (req, file, cb) {
-    let ext = path.extname(file.originalname);
-
-    cb(null, checksum(file.originalname+file.size+Date.now())+ext);
-  }
-})
+var storage = multer.memoryStorage();
  
 var upload = multer({ storage: storage })
 
@@ -35,9 +27,9 @@ router.get('/', function(req, res, next) {
 router.post('/', upload.single('file'),
 [
   check('name').not().isEmpty().isLength({ min: 5 }).withMessage('Введіть коректне ім\`я'), 
-  check('organization').not().isEmpty().isLength({ min: 2 }).withMessage('Яку організацію ви представляєте?'),   
+  check('organization').not().isEmpty().isLength({ min: 5 }).withMessage('Яку організацію ви представляєте?'),   
   check('select').not().isEmpty().withMessage('Оберіть тип звернення'), 
-  check('text').isLength({ min: 1 }).withMessage('Введіть ваше повідомлення'),   
+  check('text').isLength({ min: 5 }).withMessage('Введіть ваше повідомлення'),   
 ],
  function(req, res) {
   if(!validationResult(req).isEmpty()){
@@ -51,8 +43,27 @@ router.post('/', upload.single('file'),
     });
   }
   else{
+    saveRequestData(req);
     res.render('messages', {messages : ['Дякуємо за ваше звернення ! 🤙']});
   } 
 });
+
+let saveRequestData = (req) =>{
+  if (!req.file){
+    throw new Error('Ви не завантажили файл');
+  }else{
+    let ext = path.extname(req.file.originalname);
+    let fileName = checksum(req.file.originalname+req.file.size+Date.now())+ext;
+    fs.writeFile('./uploads/images/'+fileName, req.file.buffer, (err) => {
+      if (err) throw err;
+    });
+    const data = req.body;
+    data.filePath = './uploads/images/'+fileName;
+    data.time = Date.now().toString();
+    fs.writeFile('./uploads/data/'+checksum(data.name+data.text+data.organization+Date.now()), JSON.stringify(data), (err) => {
+      if (err) throw err;
+    });
+  }
+}
 
 module.exports = router;
