@@ -8,7 +8,7 @@ const fs = require('fs');
 
 
 router.get('/', (req, res) => {
-  res.render('contacts', { title: 'Зворотній зв\'язок | Каталог' });
+  res.render('admin', { title: 'Зворотній зв\'язок | Каталог' });
 });
 
 
