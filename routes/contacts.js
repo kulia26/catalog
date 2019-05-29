@@ -31,14 +31,23 @@ const saveRequestData = (req) => {
     const fileName =  sum + ext;
     fs.writeFile('./uploads/images/' + fileName, req.file.buffer, (err) => {
       if (err) throw err;
-    });
-    const data = req.body;
-    data.filePath = './uploads/images/' + fileName;
-    data.time = Date.now().toString();
-    const hash = checksum(data.name  + data.organization + Date.now());
-    fs.writeFile('./uploads/data/' + hash, JSON.stringify(data), (err) => {
+    }); 
+    const writeDataTxt = (err, data) => {
       if (err) throw err;
-    });
+      const newReq = req.body;
+      newReq.image = './uploads/images/' + fileName;
+      newReq.time = Date.now().toString();
+      const hash = checksum(newReq.name  + newReq.organization + Date.now());
+      let requests = JSON.parse(data);
+      if (!requests) {
+        requests = {};
+      }
+      requests[hash] = newReq;
+      fs.writeFile('./uploads/data.json', JSON.stringify(requests), (err) => {
+        if (err) throw err;
+      });
+    };
+    fs.readFile('./uploads/data.json', writeDataTxt);
   }
 };
 
