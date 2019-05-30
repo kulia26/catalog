@@ -35,6 +35,7 @@ app.use('/users', usersRouter);
 app.use('/about', aboutRouter);
 app.use('/contacts', contactsRouter);
 app.use('/item', itemRouter);
+app.use('/item/*', itemRouter);
 app.use('/admin', adminRouter);
 app.use('/additem', additemRouter);
 

@@ -31,7 +31,7 @@ const saveRequestData = (req) => {
     const fileName =  sum + ext;
     fs.writeFile('./public/uploads/items_images/' + fileName, req.file.buffer, (err) => {
       if (err) throw err;
-    }); 
+    });
     const writeData = (err, data) => {
       if (err) throw err;
       const item = {};
