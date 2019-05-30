@@ -4,5 +4,9 @@ block main
   .col5.main
     .flex
       h1
-        p Розпродаж  
-    include cards
+        p=title 
+    section.flex 
+      if(items)
+        each item in items
+          include article
+          +article(item.name, item.desctiption,item.image)
