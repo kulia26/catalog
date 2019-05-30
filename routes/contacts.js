@@ -29,7 +29,7 @@ const saveRequestData = (req) => {
     const ext = path.extname(req.file.originalname);
     const sum  = checksum(req.file.originalname + req.file.size + Date.now());
     const fileName =  sum + ext;
-    fs.writeFile('./uploads/images/' + fileName, req.file.buffer, (err) => {
+    fs.writeFile('./public/uploads/images/' + fileName, req.file.buffer, (err) => {
       if (err) throw err;
     }); 
     const writeDataTxt = (err, data) => {
@@ -43,11 +43,11 @@ const saveRequestData = (req) => {
         requests = {};
       }
       requests[hash] = newReq;
-      fs.writeFile('./uploads/data.json', JSON.stringify(requests), (err) => {
+      fs.writeFile('./public/uploads/data.json', JSON.stringify(requests), (err) => {
         if (err) throw err;
       });
     };
-    fs.readFile('./uploads/data.json', writeDataTxt);
+    fs.readFile('./public/uploads/data.json', writeDataTxt);
   }
 };
 
