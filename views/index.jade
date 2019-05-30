@@ -7,6 +7,6 @@ block main
         p=title 
     section.flex 
       if(items)
-        each item in items
+        each item, hash in items
           include article
-          +article(item.name, item.desctiption,item.image)
+          +article(item.name, item.desctiption,item.image, hash)

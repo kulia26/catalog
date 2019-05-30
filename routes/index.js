@@ -9,7 +9,7 @@ router.get('/index/:category', (req, res) => {
   const renderItems = (err, data) => {
     if (err) throw err;
     const allItems =  JSON.parse(data);
-    const goodItems = [];
+    const goodItems = {};
     const category = req.params.category;
     if (!category || category === 'index') {
       res.render('index', { title: 'Всі товари', items: allItems });
@@ -19,7 +19,7 @@ router.get('/index/:category', (req, res) => {
       if (allItems.hasOwnProperty(key)) {
         const item = allItems[key];
         if (item.category === category) {
-          goodItems.push(item);
+          goodItems[key] = item;
         }
       }
     }

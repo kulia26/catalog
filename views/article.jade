@@ -1,6 +1,6 @@
-mixin article(title='MacBook Pro mid 2018', description='Экран 13.3" (2560x1600), IPS / глянцевый / Intel Core i7 (2.7 - 4.5 ГГц) / RAM 16 ГБ / SSD 2 ТБ', image='/images/mac.png')
+mixin article(title='MacBook Pro mid 2018', description='Экран 13.3" (2560x1600), IPS / глянцевый / Intel Core i7 (2.7 - 4.5 ГГц) / RAM 16 ГБ / SSD 2 ТБ', image='/images/mac.png', hash='')
   article.col1.flex.column
-        a(href='/item')
+        a(href='/item/' + hash)
           .image
             img(src=image, alt=title)
           h3=title

@@ -4,17 +4,15 @@ block main
   .col5.main
     .flex
       h1
-        p Товар 
-        p=item
+        p Ваш товар
     section.flex
       .col1.flex.item
         .image.col2
-          img(src='/images/mac.png', alt='MacBook Pro')
+          img(src=item.image, alt=item.name)
         .text.col5
-          h3 MacBook Pro mid 2018
-          h3= item
+          h3=item.name
           i
-            p Экран 13.3" (2560x1600), IPS / глянцевый / Intel Core i7 (2.7 - 4.5 ГГц) / RAM 16 ГБ/ SSD 2 ТБ
+            p=item.description
     .flex
       h1
         p Купуйте в магазинах
