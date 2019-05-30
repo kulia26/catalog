@@ -6,13 +6,13 @@ block main
       h1
         p Всі звернення  
     section.flex
-    if(data)
-      each request in data
-        article.col1.flex.column
-          .image
-            img(src=request.image, alt=request.name)
-          i
-            h4=request.name
-            p=request.organization
-            p=request.select
-            p=request.text
+      if(data)
+        each request in data
+          article.col1.flex.column
+            .image
+              img(src=request.image, alt=request.name)
+            i
+              h4=request.name
+              p=request.organization
+              p=request.select
+              p=request.text
