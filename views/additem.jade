@@ -1,0 +1,26 @@
+extends layout
+
+block main
+  .col5.main
+    .flex
+      h1
+        p Додати новий товар
+    section.flex
+      .col1.flex.form.form-contact
+        form.flex.column(action='/additem', method='post', enctype="multipart/form-data")
+          label(for='name') Назва
+          input#name(type='text', name='name')
+          label(for='description') Опис
+          input#description(type='text', name='description')
+          label(for='category') Категорія
+          select#category(name='category')
+            option(value='laptops') ноутбуки
+            option(value='tablets') планшети
+            option(value='smartphones') смартфони
+            option(value='keyboards') клавіатури
+            option(value='mouses') мишки
+            option(value='headphones') навушники
+            option(value='players') плеєри
+          label(for='file') Зображення
+          input#file(type='file', name='file', accept='image/*', value='Обрати файл')
+          input#submit(type='submit', value='Додати')
