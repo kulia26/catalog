@@ -4,7 +4,7 @@ const router = express.Router();
 const fs = require('fs');
 
 /* GET home page. */
-router.get('/:category', (req, res) => {
+router.get('/index/:category', (req, res) => {
   console.log('category:' + req.params.category);
   const renderItems = (err, data) => {
     if (err) throw err;
@@ -23,7 +23,16 @@ router.get('/:category', (req, res) => {
         }
       }
     }
-    res.render('index', { title: 'Всі товари', items: goodItems });
+    const categories = {
+      'laptops': 'Ноутбуки',
+      'tablets': 'Планшети',
+      'smartphones': 'Смартфони',
+      'keyboards': 'Клавіатури',
+      'mouses': 'Мишки',
+      'headphones': 'Навушники',
+      'players': 'Плеєри',
+    };
+    res.render('index', { title: categories[category], items: goodItems });
   };
   fs.readFile('./public/uploads/items.json', renderItems);
 });

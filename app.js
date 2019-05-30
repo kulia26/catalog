@@ -30,6 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/index', indexRouter);
+app.use('/index/*', indexRouter);
 app.use('/users', usersRouter);
 app.use('/about', aboutRouter);
 app.use('/contacts', contactsRouter);
@@ -50,7 +51,7 @@ app.use((err, req, res) => {
 
   // render the error page
   res.status(err.status || 500);
-  const msgs = ['Cервер не може обробити ваш запит 😔\n' + err.message];
+  const msgs = ['Cервер не може обробити ваш запит 😔\n\n' + err.message];
   res.render('messages', { messages: msgs });
 
 });

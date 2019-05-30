@@ -35,7 +35,7 @@ const saveRequestData = (req) => {
     const writeData = (err, data) => {
       if (err) throw err;
       const item = {};
-      item.image = './uploads/items_images/' + fileName;
+      item.image = '../uploads/items_images/' + fileName;
       item.time = Date.now().toString();
       item.name = req.body.name;
       item.description = req.body.description;
