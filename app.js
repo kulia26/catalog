@@ -8,7 +8,6 @@ const logger = require('morgan');
 //const { check,validationResult } = require('express-validator/check');
 
 const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
 const aboutRouter = require('./routes/about');
 const contactsRouter = require('./routes/contacts');
 const itemRouter = require('./routes/item');
@@ -31,7 +30,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/index', indexRouter);
 app.use('/index/*', indexRouter);
-app.use('/users', usersRouter);
 app.use('/about', aboutRouter);
 app.use('/contacts', contactsRouter);
 app.use('/item', itemRouter);
